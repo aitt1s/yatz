@@ -1,0 +1,104 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Yatz</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body class="blue-grey darken-4" id="bodyId">
+
+  <div class="blue-grey darken-4 valign-wrapper" id="start-screen">
+    <div class="container">
+      <div class="row">
+         <div class="start-card col s12 m6 offset-m3">
+           <div class="card">
+             <div class="card-content">
+               <span class="card-title">Yathzee</span>
+               <p>Add players. Start game whenever you like.</p>
+               <div class="row">
+                 <div class="input-field col s12" id="fields">
+                   <input id="0" type="text" class="player-input" placeholder="Name" onkeyup="renderNew(this.id)">
+                 </div>
+               </div>
+             </div>
+             <div class="card-action">
+               <a class="waves-effect waves-light" id="" onClick="selectPlayers()">Start</a>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+  </div>
+
+  <div class="overlay hide valign-wrapper" id="overlay">
+    <div class="card" id="gameOver">
+      <div class="card-content">
+        <h3>Game over!</h3>
+        <ul id="results">
+        </ul>
+      </div>
+      <div class="card-action">
+        <a href="#" onClick="playAgain()">Play again!</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col s6">
+        <div class="row dicerow">
+          <div class="col s12">
+            <a class="waves-effect waves-light btn-large" id="throw" onClick="rollDices()">Throw</a>
+            <blockquote id="blockq">Juha's Turn!</blockquote>
+          </div>
+        </div>
+        <div class="row dicerow">
+          <div class="col s12">
+            <div class="card-panel rightside left" id="diceboard">
+              <div class="dice-overlay valign-wrapper" id="diceOverlay">
+                <h3 class="">Roll Dice!</h3>
+              </div>
+              <span class="dice-wrapper" id="diceWrapper0" onClick="toggleDice(this.id)">
+                <span class="dice" id="dice0"></span>
+              </span>
+              <span class="dice-wrapper" id="diceWrapper1" onClick="toggleDice(this.id)">
+                <span class="dice" id="dice1"></span>
+              </span>
+              <span class="dice-wrapper" id="diceWrapper2" onClick="toggleDice(this.id)">
+                <span class="dice" id="dice2"></span>
+              </span>
+              <span class="dice-wrapper" id="diceWrapper3" onClick="toggleDice(this.id)">
+                <span class="dice" id="dice3"></span>
+              </span>
+              <span class="dice-wrapper" id="diceWrapper4" onClick="toggleDice(this.id)">
+                <span class="dice" id="dice4"></span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="card-panel result-area hide-results" id="resultArea">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col s6">
+        <div class="row">
+          <div class="card-panel leftside col s12" id="scoreBoard">
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+	<script src="scripts.js"></script>
+</body>
+</html>
